@@ -1,23 +1,23 @@
-import React, { useReducer, createContext, useMemo, useEffect } from 'react';
+import React, { createContext, useReducer, useEffect } from 'react';
 import axios from 'axios';
 
-export const initialState = {
-  theme: 'light',
-  data: [],
+export const ContextGlobal = createContext();
+
+const initialState = {
+  theme: 'light', // or dark
+  dentists: [],
 };
 
-export const ContextGlobal = createContext(undefined);
-
-const reducer = (state, action) => {
+function reducer(state, action) {
   switch (action.type) {
     case 'SET_THEME':
-      return { ...state, theme: action.payload };
-    case 'SET_DATA':
-      return { ...state, data: action.payload };
+      return { ...state, theme: action.theme };
+    case 'SET_DENTISTS':
+      return { ...state, dentists: action.dentists };
     default:
       return state;
   }
-};
+}
 
 export const ContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -25,23 +25,17 @@ export const ContextProvider = ({ children }) => {
   useEffect(() => {
     axios.get('https://jsonplaceholder.typicode.com/users')
       .then(response => {
-        dispatch({ type: 'SET_DATA', payload: response.data });
-      })
-      .catch(error => {
-        console.error('Hubo un error al obtener los datos:', error);
+        dispatch({ type: 'SET_DENTISTS', dentists: response.data });
       });
   }, []);
 
-  const value = useMemo(() => {
-    return { state, dispatch };
-  }, [state, dispatch]);
-
   return (
-    <ContextGlobal.Provider value={value}>
+    <ContextGlobal.Provider value={{ state, dispatch }}>
       {children}
     </ContextGlobal.Provider>
   );
 };
+
 
 
 

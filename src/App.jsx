@@ -4,19 +4,15 @@ import Home from './Components/Home';
 import Dentist from './Components/Dentist';
 import Contact from './Components/Contact';
 import Favs from './Components/Favs';
+import Navbar from './Components/Navbar';
 import { ContextProvider } from './Components/utils/ContextGlobal';
 
 function App() {
-  const appStyle = {
-    backgroundColor: 'black',
-    width: '355px',
-    height: '355px'
-  };
-
   return (
     <ContextProvider>
-      <div className="App" style={appStyle}>
+      <div className="App">
         <Router>
+          <Navbar />
           <Switch>
             <Route path="/home" component={Home} />
             <Route path="/dentist/:id" component={Dentist} />
@@ -28,6 +24,7 @@ function App() {
     </ContextProvider>
   );
 }
+
 
 export default App;
 
