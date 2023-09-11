@@ -14,9 +14,10 @@ const Home = () => {
         console.error("There was an error fetching the data", error);
         });
     }, []);
-
+    
     return (
-    <div>
+    <div className="card-grid">
+        
         {dentists.map(dentist => (
         <Card
             key={dentist.id}

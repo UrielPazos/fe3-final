@@ -25,10 +25,18 @@ h1{
 
 nav{
   display: flex;
-  width: 80vw;
-  justify-content: flex-start;
+  justify-content: flex-end;
   padding: 1rem;
+  padding-right: 24.6%;
+  background-color: rgb(238, 238, 238);
 }
+
+ul{
+  display: flex;
+  list-style-type: none;
+}
+
+
 
 a{
   color: #000;
@@ -92,16 +100,23 @@ form{
 
 .card-grid{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   gap: 1rem;
-  width: 90vw;
+  width: 70vw;
   height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
+  padding: 0;
+  border: 0
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
 }
 
 table {
- border-collapse: collapse;
+    border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
     display: table;

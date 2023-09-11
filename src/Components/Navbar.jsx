@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <nav className={themeClass}>
-      <ul>
+      <ul className='Lista'>
         <li><Link to="/home">Home</Link></li>
         <li><Link to="/contact">Contacto</Link></li>
         <li><Link to="/favs">Destacados</Link></li>
