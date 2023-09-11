@@ -134,10 +134,18 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.dark{
+.dark-theme{
   background-color: #12121296;
   color: white;
 }
-.dark > a {
+.dark-theme > a {
+  color: white;
+}
+
+.light-theme{
+  background-color: #12121296;
+  color: white;
+}
+.light-theme > a {
   color: white;
 }

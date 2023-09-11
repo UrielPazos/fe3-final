@@ -10,7 +10,7 @@ const Navbar = () => {
     dispatch({ type: 'SET_THEME', theme: newTheme });
   };
 
-  // Clase condicional para estilizar según el tema
+
   const themeClass = state.theme === 'light' ? 'light-theme' : 'dark-theme';
 
   return (
