@@ -6,6 +6,7 @@ import Contact from './Components/Contact';
 import Favs from './Components/Favs';
 import Navbar from './Components/Navbar';
 import { ContextProvider } from './Components/utils/ContextGlobal';
+import Footer from './Components/Footer';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/contact" component={Contact} />
             <Route path="/favs" component={Favs} />
           </Switch>
+          <Footer/>
         </Router>
       </div>
     </ContextProvider>
