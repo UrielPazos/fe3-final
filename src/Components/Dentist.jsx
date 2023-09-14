@@ -22,11 +22,14 @@ const dentist = () => {
 
     return (
     <div>
-        {/* Mostrar los detalles del dentista aquí */}
-        <h1>{dentist.name}</h1>
-        <p>Email: {dentist.email}</p>
-        <p>Teléfono: {dentist.phone}</p>
-        <p>Website: {dentist.website}</p>
+        {<><h1>{dentist.name}</h1>
+            <div className='dentist-detail'>
+                <p>Email: {dentist.email}</p>
+                <p>Teléfono: {dentist.phone}</p>
+                <p>Website: {dentist.website}</p>
+            </div>
+        </>}
+        
     </div>
     );
 };

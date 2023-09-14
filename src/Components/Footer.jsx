@@ -1,8 +1,19 @@
 import React from 'react'
+import { ContextGlobal } from './utils/ContextGlobal';
+import { useContext } from 'react';
+
 
 const Footer = () => {
+  const { state, dispatch } = useContext(ContextGlobal);
+
+  const toggleTheme = () => {
+    const newTheme = state.theme === 'light' ? 'dark' : 'light';
+    dispatch({ type: 'SET_THEME', theme: newTheme });
+  };
+
+  const themeClass = state.theme === 'light' ? 'light-theme' : 'dark-theme';
   return (
-    <footer>
+    <footer className={themeClass}>
         <p>Powered by</p>
         <img src="/images/DH.png" alt='DH-logo' />
         <div>

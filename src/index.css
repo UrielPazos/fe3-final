@@ -134,18 +134,43 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.dark-theme{
-  background-color: #12121296;
-  color: white;
-}
-.dark-theme > a {
+/* Tema oscuro */
+.dark-theme {
+  background-color: #1212127a;
   color: white;
 }
 
-.light-theme{
-  background-color: #12121296;
+.dark-theme a,
+.dark-theme h1,
+.dark-theme p {
   color: white;
 }
-.light-theme > a {
-  color: white;
+
+/* Tema claro */
+.light-theme {
+  background-color: #ffffff;
+  color: black;
+}
+
+.light-theme a,
+.light-theme h1,
+.light-theme p {
+  color: black;
+}
+
+/* Body del tema oscuro */
+.body-dark-theme {
+  background-color: #121212;
+}
+
+/* Body del tema claro */
+.body-light-theme {
+  background-color: #ffffff;
+}
+
+.dentist-detail{
+  display: flex;
+  flex-direction: column;
+
+
 }

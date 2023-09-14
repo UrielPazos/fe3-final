@@ -1,12 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './Components/Home';
+
+// Importando componentes desde la carpeta /Routes
+import Home from './Routes/Home';
+import Contact from './Routes/Contact';
+import Favs from './Routes/Favs';
+import Detail from './Routes/Detail';
+
+// Importando componentes desde la carpeta /Components
 import Dentist from './Components/Dentist';
-import Contact from './Components/Contact';
-import Favs from './Components/Favs';
 import Navbar from './Components/Navbar';
-import { ContextProvider } from './Components/utils/ContextGlobal';
 import Footer from './Components/Footer';
+import { ContextProvider } from './Components/utils/ContextGlobal';
 
 function App() {
   return (
@@ -19,14 +24,15 @@ function App() {
             <Route path="/dentist/:id" component={Dentist} />
             <Route path="/contact" component={Contact} />
             <Route path="/favs" component={Favs} />
+            <Route path="/detail/:id" component={Detail} />
           </Switch>
-          <Footer/>
+          <Footer />
         </Router>
       </div>
     </ContextProvider>
   );
 }
 
-
 export default App;
+
 

@@ -29,12 +29,21 @@ export const ContextProvider = ({ children }) => {
       });
   }, []);
 
+  useEffect(() => {
+    if (state.theme === 'dark') {
+      document.body.className = 'dark-theme';
+    } else {
+      document.body.className = 'light-theme';
+    }
+  }, [state.theme]);
+
   return (
     <ContextGlobal.Provider value={{ state, dispatch }}>
       {children}
     </ContextGlobal.Provider>
   );
 };
+
 
 
 

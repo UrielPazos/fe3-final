@@ -10,7 +10,6 @@ const Navbar = () => {
     dispatch({ type: 'SET_THEME', theme: newTheme });
   };
 
-
   const themeClass = state.theme === 'light' ? 'light-theme' : 'dark-theme';
 
   return (
@@ -20,9 +19,10 @@ const Navbar = () => {
         <li><Link to="/contact">Contacto</Link></li>
         <li><Link to="/favs">Destacados</Link></li>
       </ul>
-      <button onClick={toggleTheme}>Cambiar tema</button>
+      <button onClick={toggleTheme}>Tema</button>
     </nav>
   );
 };
 
 export default Navbar;
+
